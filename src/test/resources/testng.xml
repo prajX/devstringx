@@ -1,0 +1,13 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="MyTestSuite">
+    <test name="Devstringx_Tests">
+        <classes>
+            <class name="com.msnagile.devstringx.BaseTest"/>
+            <class name="com.msnagile.devstringx.HomeTest"/>
+            <class name="com.msnagile.devstringx.RegisterTest"/>
+            <class name="com.msnagile.devstringx.CreateAccountTest"/>
+            <class name="com.msnagile.devstringx.EmailConfirmTest"/>
+
+        </classes>
+    </test>
+</suite>
