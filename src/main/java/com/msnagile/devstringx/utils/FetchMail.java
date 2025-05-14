@@ -2,6 +2,8 @@ package com.msnagile.devstringx.utils;
 
 import jakarta.mail.*;
 import jakarta.mail.search.*;
+import java.util.Arrays;
+import java.util.Comparator;
 import java.util.Properties;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
@@ -42,6 +44,17 @@ public class FetchMail {
     
             Message[] messages = inbox.search(combinedSearch);
             System.out.println("Number of messages found: " + messages.length);
+
+            Arrays.sort(messages, new Comparator<Message>() {
+                         public int compare(Message m1, Message m2) {
+                                try {
+                                    return m2.getSentDate().compareTo(m1.getSentDate());
+                                    } 
+                                catch (MessagingException e) {
+                                    throw new RuntimeException(e);
+                                        }
+                                    }
+                                });
 
 
                 if (messages.length > 0) {

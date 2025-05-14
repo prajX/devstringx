@@ -34,9 +34,9 @@ public class BaseTest {
         } catch (IOException e) {
             e.printStackTrace();
         }
-        DriverManager.initializeDriver(p.getProperty("chromedriver.path"));
+        DriverManager.initializeDriver(p.getProperty("browser"),p.getProperty("driver.path"));
         driver=DriverManager.getDriver();
-        driver.get("https://msnagile.com");
+        driver.get(p.getProperty("app.baseurl"));
         driver.manage().window().maximize();
     }
 
