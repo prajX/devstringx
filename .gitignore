@@ -1,0 +1,9 @@
+# Ignore IDE settings
+.vscode/
+
+# Ignore WebDriver executables
+chromedriver.exe
+geckodriver.exe
+
+# Ignore compiled output
+/target/
